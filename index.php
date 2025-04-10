@@ -23,6 +23,7 @@
         top: 0;
         
         width: 100vw;
+        height: 100vh;
     }
     
     .papan{

@@ -23,6 +23,7 @@ $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
         @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 
         body{
+            position: relative;
             margin: 0;
             padding: 0;
             width: 100vw;
@@ -30,13 +31,16 @@ $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
             overflow: hidden;
             font-family: "PT Sans Narrow", sans-serif;
         }
+        
+        .wrap{
+            padding-top: 5%;
+            display: grid;
+            place-content: center;
+        }
 
         .container-form{
-            position: absolute;
+            position: relative;
             z-index: 1;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
         .container {
@@ -60,6 +64,7 @@ $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
             top: 0;
             
             width: 100vw;
+            height: 100vh;
         }
 
         .tabel{
@@ -67,7 +72,7 @@ $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
             z-index: 2;
             bottom: 0;
             right: -10%;
-            width: 40%;
+            width: 35%;
         }
 
         form{
@@ -89,38 +94,39 @@ $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
 </head>
 
 <body>
-    <div class="container-form">
-        <img src="Asset/papan-utama.png" class="papan-utama"> 
-        <form method="POST" action="">
-            <h1>Setting</h1>
-            <p>Text-align:
-                <select id="align" name="align">
-                    <option value="--Pilih Text Align--" <?php echo $align == "" ? " selected" : "" ?>> --Pilih Text Align-- </option>
-                    <option value="Left" <?php echo $align == "Left" ? " selected" : "" ?>>Left</option>
-                    <option value="Right" <?php echo $align == "Right" ? " selected" : "" ?>>Right</option>
-                    <option value="Center" <?php echo $align == "Center" ? " selected" : "" ?>>Center</option>
-                    <option value="Justify" <?php echo $align == "Justify" ? " selected" : "" ?>>Justify</option>
-                </select>
-            </p>
-            <p>Font-family:
-                <select id="font" name="font">
-                <option value="--Pilih Font Family--" <?php echo $align == "" ? " selected" : "" ?>> --Pilih Font Family-- </option>
-                    <option value="Arial" <?php echo $font == "Arial" ? "selected" : "" ?>>Arial</option>
-                    <option value="Tahoma" <?php echo $font == "Tahoma" ? "selected" : "" ?>>Tahoma</option>
-                    <option value="Calibri" <?php echo $font == "Calibri" ? "selected" : "" ?>>Calibri</option>
-                </select>
-            </p>
-            <p>Color:
-                <input type="color" name="pickColor" value="<?php echo htmlspecialchars($color) ?>">
-            </p>
-            <br>
-            <br>
-            <button class="btn">Simpan</button>
-        </form>
+    <div class="wrap">
+        <div class="container-form">
+            <img src="Asset/papan-utama.png" class="papan-utama"> 
+            <form method="POST" action="">
+                <h1>Setting</h1>
+                <p>Text-align:
+                    <select id="align" name="align">
+                        <option value="--Pilih Text Align--" <?php echo $align == "" ? " selected" : "" ?>> --Pilih Text Align-- </option>
+                        <option value="Left" <?php echo $align == "Left" ? " selected" : "" ?>>Left</option>
+                        <option value="Right" <?php echo $align == "Right" ? " selected" : "" ?>>Right</option>
+                        <option value="Center" <?php echo $align == "Center" ? " selected" : "" ?>>Center</option>
+                        <option value="Justify" <?php echo $align == "Justify" ? " selected" : "" ?>>Justify</option>
+                    </select>
+                </p>
+                <p>Font-family:
+                    <select id="font" name="font">
+                    <option value="--Pilih Font Family--" <?php echo $align == "" ? " selected" : "" ?>> --Pilih Font Family-- </option>
+                        <option value="Arial" <?php echo $font == "Arial" ? "selected" : "" ?>>Arial</option>
+                        <option value="Tahoma" <?php echo $font == "Tahoma" ? "selected" : "" ?>>Tahoma</option>
+                        <option value="Calibri" <?php echo $font == "Calibri" ? "selected" : "" ?>>Calibri</option>
+                    </select>
+                </p>
+                <p>Color:
+                    <input type="color" name="pickColor" value="<?php echo htmlspecialchars($color) ?>">
+                </p>
+                <br>
+                <br>
+                <button class="btn">Simpan</button>
+            </form>
+        </div>
     </div>
     <img src="Asset/bg.png" class="bg">
     <img src="Asset/tabel.png" class="tabel">
-    
 </body>
 
 </html>

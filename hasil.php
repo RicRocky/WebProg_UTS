@@ -10,12 +10,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow:wght@400;700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 
+        html{
+            height: 100%;
+        }
+        
+        
         body{
             margin: 0;
             padding: 0;
             width: 100vw;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100%;
+            overflow-x: hidden;
             font-family: "PT Sans Narrow", sans-serif;
         }
         
@@ -41,12 +46,28 @@
             text-align: center;
         }
 
-        .container {
-            position: relative;
-            z-index: 2;
+        
+        @media screen and (min-width:965px){
+            .container {
+                position: relative;
+                z-index: 2;
+    
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+        }
 
-            display: flex;
-            justify-content: space-around;
+        @media screen and (max-width:965px){
+            .container {
+                position: relative;
+                z-index: 2;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }   
         }
 
         .bg{
@@ -55,6 +76,7 @@
             top: 0;
             
             width: 100vw;
+            height: 100vh;
         }
 
         .tabel{
@@ -65,9 +87,17 @@
             width: 40%;
         }
 
-        .kiri{
-            position: relative;
-            width: 20%;
+        @media screen and (min-width:965px){
+            .kiri{
+                position: relative;
+                width: 20%;
+            }
+        }
+    
+        @media screen and (max-width:965px){
+            .kiri{
+                position: relative;
+            }
         }
 
         .text-papan{
@@ -77,6 +107,7 @@
             white: 100%;
             color: white;
             font-size: 1.3vw;
+            width: 80%;
         }
         
         .text-papan>p{
@@ -84,8 +115,8 @@
         }
 
         .text-papan>textarea{
-            width: 120%;
-            height: 40vh;
+            width: 100%;
+            height: 30vh;
         }
 
         .text-papan>a{
@@ -116,6 +147,12 @@
 
         .tambahan{
             width: 20%;
+        }
+
+        @media screen and (max-width:1125px) {
+            .tambahan{
+                width: 0%;
+            }   
         }
     </style>
 </head>
@@ -148,8 +185,7 @@ p {
         </div>
         <div class="tambahan"></div>
     </div>
-    <img src="Asset/bg.png" class="bg">
+    <img src="Asset/bg.png" class="bg" id="bg">
     <img src="Asset/tabel.png" class="tabel">
 </body>
-
 </html>
