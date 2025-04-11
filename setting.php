@@ -17,7 +17,8 @@ $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
 
 <head>
     <meta charset="UTF-8">
-    <title>Setting</title>
+    <title>Random 8 - Setting</title>
+    <link rel="icon" type="image/x-icon" href="Asset/logo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow:wght@400;700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');

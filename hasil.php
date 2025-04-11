@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Random 8 - Hasil</title>
+    <link rel="icon" type="image/x-icon" href="Asset/logo.png">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow:wght@400;700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
