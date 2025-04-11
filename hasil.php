@@ -26,14 +26,16 @@
         }
         
         <?php
-            $align = isset($_COOKIE["textAlign"]) ? $_COOKIE["textAlign"] : "";
-            $font = isset($_COOKIE["fontFamily"]) ? $_COOKIE["fontFamily"] : "";
+            $align = isset($_COOKIE["textAlign"]) ? $_COOKIE["textAlign"] : null;
+            $font = isset($_COOKIE["fontFamily"]) ? $_COOKIE["fontFamily"] : null;
             $color = isset($_COOKIE["fontColor"]) ? $_COOKIE["fontColor"] : "#000000";
-            echo ".par {
-                    text-align: $align;
-                    font-family: $font;
-                    color: $color;
-                }"
+            if (isset($_COOKIE["textAlign"]) && isset($_COOKIE["fontFamily"]) && isset($_COOKIE["fontColor"])){
+                echo ".par {
+                        text-align: $align;
+                        font-family: $font;
+                        color: $color;
+                    }";
+            }
         ?>
 
         .judul{
@@ -116,8 +118,10 @@
         }
 
         .text-papan>textarea{
-            width: 100%;
+            width: 80%;
             height: 30vh;
+            background-color: white;
+            color: black;
         }
 
         .text-papan>a{
@@ -164,12 +168,16 @@
             <img src="Asset/papan.png" class="papan">
             <div class="text-papan">
                 <p>Setting yang tersedia: </p>
-                <textarea>
-p {
-    text-align: <?php echo $align ?>;
-    font-family: <?php echo $font ?>;
-    color: <?php echo $color ?>;
+                <textarea disabled>
+<?php 
+if (isset($_COOKIE["textAlign"]) && isset($_COOKIE["fontFamily"]) && isset($_COOKIE["fontColor"])){
+    echo "p {";
+    echo "\n    text-align: $align;";
+    echo "\n    font-family: $font;";
+    echo "\n    color: $color;";
+    echo "\n}";
 }
+?>
                 </textarea>
                 <br>
                 <a href="setting.php">Ganti Setting</a>
